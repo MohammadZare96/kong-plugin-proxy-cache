@@ -20,6 +20,10 @@ This Kong plugin adds a non-standard `X-Cache-Status` header. There are several 
 * `HIT`: The request was satisfied and served from cache.
 * `BYPASS`: The request could not be satisfied from cache based on plugin settings.
 
+
+
+# for kong 3
+    remove redis from config and set parameters directly
 ## Getting started
 
 Configure this plugin on a Service by making the following request:
@@ -65,8 +69,6 @@ When the `cache_control` is enabled by settings, Kong will respect request and r
 * Secondary key calculation via Vary is not yet supported.
 
 
-### for kong 3
-    remove redis from config and set parameters directly
 
 
 ## Installing
