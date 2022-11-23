@@ -11,19 +11,19 @@ end
 
 function _M:set_config(config)
     local redis_config = {
-        host = config.redis.host,
-        port = config.redis.port,
-        password = config.redis.password,
-        db = config.redis.database,
-        read_timeout = config.redis.timeout,
-        keepalive_timeout = config.redis.max_idle_timeout,
-        keepalive_poolsize = config.redis.pool_size
+        host = config.host,
+        port = config.port,
+        password = config.password,
+        db = config.database,
+        read_timeout = config.timeout,
+        keepalive_timeout = config.max_idle_timeout,
+        keepalive_poolsize = config.pool_size
     }
-    local sentinel_master_name = config.redis.sentinel_master_name
+    local sentinel_master_name = config.sentinel_master_name
     if sentinel_master_name ~= nil and string.len(sentinel_master_name) > 0 then
         redis_config.master_name = sentinel_master_name
-        redis_config.role = config.redis.sentinel_role
-        local sentinels = config.redis.sentinel_addresses
+        redis_config.role = config.sentinel_role
+        local sentinels = config.sentinel_addresses
         if sentinels then
             redis_config.sentinels = {}
             for _, sentinel in ipairs(sentinels) do

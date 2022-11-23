@@ -64,6 +64,11 @@ When the `cache_control` is enabled by settings, Kong will respect request and r
 * The behavior of no-cache is simplified to exclude the entity from being cached entirely.
 * Secondary key calculation via Vary is not yet supported.
 
+
+### for kong 3
+    remove redis from config and set parameters directly
+
+
 ## Installing
 
 ### From LuaRocks
